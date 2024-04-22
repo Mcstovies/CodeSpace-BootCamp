@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sphere Volume Calculator</title>
+</head>
+<body>
+    <h2>Sphere Volume Calculator</h2>
+    <form id="volumeForm">
+        <!-- Input field for radius -->
+        <label for="radius">Enter the radius of the sphere:</label><br>
+        <input type="number" id="radius" name="radius" required><br><br>
+        <!-- Button to calculate volume -->
+        <button type="button" onclick="calculateVolume()">Calculate</button>
+    </form>
+    <!-- Display area for the result -->
+    <p id="result"></p>
+
+    <script>
+        // Function to calculate the volume of a sphere
+        function calculateVolume() {
+            // Get the value of the radius input
+            var radius = parseFloat(document.getElementById("radius").value);
+
+            // Check if the radius is valid (not negative or NaN)
+            if (radius < 0 || isNaN(radius)) {
+                // Display error message if radius is invalid
+                document.getElementById("result").textContent = "Please enter a valid radius.";
+                return;
+            }
+
+            // Calculate the volume of the sphere using the formula: V = (4/3) * π * r^3
+            var volume = (4 / 3) * Math.PI * Math.pow(radius, 3);
+
+            // Display the result
+            document.getElementById("result").textContent = "The volume of the sphere with radius " + radius + " is " + volume.toFixed(2) + ".";
+        }
+    </script>
+</body>
+</html>
