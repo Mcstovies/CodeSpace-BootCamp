@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Activity 1 - Vanilla JS DOM</title>
+</head>
+<body>
+    <p id="text">Vanilla JS DOM</p>
+    <div>
+        <button id="jsstyle" onclick="js_style()">Style</button>
+    </div>
+
+    <script>
+        // JavaScript function to modify the style of the paragraph
+        function js_style() {
+            // Get the paragraph element
+            var paragraph = document.getElementById("text");
+            
+            // Modify its style
+            paragraph.style.fontSize = "20px";
+            paragraph.style.color = "blue";
+            paragraph.style.fontFamily = "Arial, sans-serif";
+        }
+    </script>
+</body>
+</html>
